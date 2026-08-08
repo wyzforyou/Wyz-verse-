@@ -1,0 +1,685 @@
+<!--==================================================-->
+<!-- INDEX.HTML - PART 1/8 -->
+<!-- DOCTYPE, HEAD, FIREBASE SDK, BODY OPEN -->
+<!--==================================================-->
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WV Entertainment</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="module">
+
+
+</script>
+
+</head>
+
+<body>
+<!--==================================================-->
+<!-- INDEX.HTML - PART 2/8 -->
+<!-- SPLASH SCREEN -->
+<!--==================================================-->
+
+<!-- Splash Screen -->
+
+<div id="splashScreen" class="screen active">
+
+    <div class="splash-container">
+
+        <img
+            src="assets/logo.png"
+            alt="WV Entertainment"
+            class="logo-splash"
+        >
+
+        <h1 class="brand-title">
+            WYZ VERSE
+        </h1>
+
+        <p class="brand-subtitle">
+            ENTERTAINMENT
+        </p>
+
+        <div class="loading-wrapper">
+
+            <p class="loading-text">
+                Loading assets...
+            </p>
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill">
+                </div>
+
+            </div>
+
+            <div class="progress-info">
+
+                <span id="progressPercent">
+                    0%
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="version-box">
+
+            <p>
+                Version 1.0
+            </p>
+
+            <small>
+                WV Entertainment
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- End Splash Screen -->
+<!--==================================================-->
+<!-- INDEX.HTML - PART 3/8 -->
+<!-- LOGIN SCREEN -->
+<!--==================================================-->
+
+<!-- Login Screen -->
+
+<div id="loginScreen" class="screen">
+
+    <div class="login-container">
+
+        <img
+            src="assets/logo.png"
+            alt="WV Entertainment"
+            class="login-logo"
+        >
+
+        <h1 class="login-title">
+            Welcome
+        </h1>
+
+        <p class="login-description">
+            Sign in to continue to
+            <br>
+            WV Entertainment
+        </p>
+
+        <button
+            id="googleLoginBtn"
+            class="google-login-btn">
+
+            <img
+                src="assets/icons/google.png"
+                alt="Google"
+                class="google-icon"
+            >
+
+            <span>
+                Continue with Google
+            </span>
+
+        </button>
+
+        <button
+            id="guestLoginBtn"
+            class="guest-login-btn">
+
+            Continue as Guest
+
+        </button>
+
+        <div class="login-footer">
+
+            <p>
+                By continuing, you agree to our
+            </p>
+
+            <a href="#">
+                Terms of Service
+            </a>
+
+            <span>•</span>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- End Login Screen -->
+<!--==================================================-->
+<!-- INDEX.HTML - PART 4/8 -->
+<!-- ACCOUNT SYNC SCREEN -->
+<!--==================================================-->
+
+<!-- Sync Screen -->
+
+<div id="syncScreen" class="screen">
+
+    <div class="sync-container">
+
+        <img
+            src="assets/logo.png"
+            alt="WV Entertainment"
+            class="sync-logo"
+        >
+
+        <h1 class="sync-title">
+            Synchronizing Account
+        </h1>
+
+        <p class="sync-description">
+            Please wait while we prepare your account.
+        </p>
+
+        <div class="sync-status">
+
+            <div class="sync-item">
+
+                <div
+                    id="syncLoginIcon"
+                    class="sync-icon loading">
+                </div>
+
+                <span id="syncLoginText">
+                    Signing in...
+                </span>
+
+            </div>
+
+            <div class="sync-item">
+
+                <div
+                    id="syncUserIcon"
+                    class="sync-icon waiting">
+                </div>
+
+                <span id="syncUserText">
+                    Loading user data...
+                </span>
+
+            </div>
+
+            <div class="sync-item">
+
+                <div
+                    id="syncPremiumIcon"
+                    class="sync-icon waiting">
+                </div>
+
+                <span id="syncPremiumText">
+                    Checking Premium...
+                </span>
+
+            </div>
+
+            <div class="sync-item">
+
+                <div
+                    id="syncFinishIcon"
+                    class="sync-icon waiting">
+                </div>
+
+                <span id="syncFinishText">
+                    Finalizing...
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="sync-progress">
+
+            <div class="progress-bar">
+
+                <div
+                    id="syncProgressFill"
+                    class="progress-fill">
+                </div>
+
+            </div>
+
+            <span id="syncProgressText">
+                0%
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- End Sync Screen -->
+<!--==================================================-->
+<!-- INDEX.HTML - PART 5/8 -->
+<!-- HOME SCREEN -->
+<!--==================================================-->
+
+<!-- Home Screen -->
+
+<div id="homeScreen" class="screen">
+
+    <header class="home-header">
+
+        <div class="profile-area">
+
+            <img
+                id="userPhoto"
+                src="assets/default-profile.png"
+                alt="Profile"
+                class="profile-image"
+            >
+
+            <div class="profile-text">
+
+                <span class="welcome-text">
+                    Welcome Back
+                </span>
+
+                <h2 id="userName">
+                    Loading...
+                </h2>
+
+            </div>
+
+        </div>
+
+        <button
+            id="notificationButton"
+            class="notification-button">
+
+            🔔
+
+        </button>
+
+    </header>
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search models..."
+            >
+
+        </div>
+
+    </section>
+
+    <section class="banner-section">
+
+        <div class="premium-banner">
+
+            <div class="banner-text">
+
+                <h3>
+                    Premium Access
+                </h3>
+
+                <p>
+                    Unlock every premium asset with one subscription.
+                </p>
+
+            </div>
+
+            <button
+                id="premiumButton"
+                class="premium-button">
+
+                Subscribe
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="category-section">
+
+        <div class="section-title">
+
+            <h2>
+                Categories
+            </h2>
+
+        </div>
+
+        <div
+            id="categoryGrid"
+            class="category-grid">
+            <!--==================================================-->
+<!-- INDEX.HTML - PART 6/8 -->
+<!-- CATEGORY GRID -->
+<!--==================================================-->
+
+            <div class="category-card" data-category="floating-island">
+
+                <img
+                    src="assets/categories/floating-island.jpg"
+                    alt="Floating Island"
+                >
+
+                <div class="category-info">
+
+                    <h3>Floating Island</h3>
+
+                    <p>Premium Collection</p>
+
+                </div>
+
+            </div>
+
+            <div class="category-card" data-category="system">
+
+                <img
+                    src="assets/categories/system.jpg"
+                    alt="System"
+                >
+
+                <div class="category-info">
+
+                    <h3>System</h3>
+
+                    <p>Premium Collection</p>
+
+                </div>
+
+            </div>
+
+            <div class="category-card" data-category="building">
+
+                <img
+                    src="assets/categories/building.jpg"
+                    alt="Building"
+                >
+
+                <div class="category-info">
+
+                    <h3>Building</h3>
+
+                    <p>Architecture Assets</p>
+
+                </div>
+
+            </div>
+
+            <div class="category-card" data-category="nature">
+
+                <img
+                    src="assets/categories/nature.jpg"
+                    alt="Nature"
+                >
+
+                <div class="category-info">
+
+                    <h3>Nature</h3>
+
+                    <p>Trees, Grass & Rocks</p>
+
+                </div>
+
+            </div>
+
+            <div class="category-card" data-category="furniture">
+
+                <img
+                    src="assets/categories/furniture.jpg"
+                    alt="Furniture"
+                >
+
+                <div class="category-info">
+
+                    <h3>Furniture</h3>
+
+                    <p>Interior Assets</p>
+
+                </div>
+
+            </div>
+
+            <div class="category-card" data-category="characters">
+
+                <img
+                    src="assets/categories/characters.jpg"
+                    alt="Characters"
+                >
+
+                <div class="category-info">
+
+                    <h3>Characters</h3>
+
+                    <p>NPC & Character Models</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!--==================================================-->
+<!-- INDEX.HTML - PART 7/8 -->
+<!-- POPUPS -->
+<!--==================================================-->
+
+<!-- Premium Popup -->
+
+<div id="premiumPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <div class="popup-header">
+
+            <h2>
+                Premium Access
+            </h2>
+
+        </div>
+
+        <div class="popup-content">
+
+            <p>
+                Subscribe to unlock all premium assets.
+            </p>
+
+            <h3>
+                Rp2.000
+            </h3>
+
+            <ul>
+
+                <li>✔ Unlimited Access</li>
+
+                <li>✔ All Premium Models</li>
+
+                <li>✔ Future Updates</li>
+
+            </ul>
+
+        </div>
+
+        <div class="popup-buttons">
+
+            <button
+                id="buyPremiumButton"
+                class="primary-button">
+
+                Subscribe
+
+            </button>
+
+            <button
+                id="closePremiumPopup"
+                class="secondary-button">
+
+                Later
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Model Detail Popup -->
+
+<div id="modelPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <img
+            id="modelPreview"
+            src=""
+            alt="Model Preview"
+            class="model-preview"
+        >
+
+        <div class="popup-content">
+
+            <h2 id="modelTitle">
+                Model Name
+            </h2>
+
+            <p id="modelDescription">
+                Model description...
+            </p>
+
+        </div>
+
+        <div class="popup-buttons">
+
+            <button
+                id="downloadButton"
+                class="primary-button">
+
+                Download
+
+            </button>
+
+            <button
+                id="closeModelPopup"
+                class="secondary-button">
+
+                Close
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Loading Popup -->
+
+<div id="loadingPopup" class="popup-overlay">
+
+    <div class="popup-box loading-popup">
+
+        <div class="loading-spinner"></div>
+
+        <h3>
+            Please Wait...
+        </h3>
+
+        <p id="loadingMessage">
+            Processing...
+        </p>
+
+    </div>
+
+</div>
+<!--==================================================-->
+<!-- INDEX.HTML - PART 8/8 -->
+<!-- BOTTOM NAVIGATION, SCRIPT & END -->
+<!--==================================================-->
+
+    <nav class="bottom-navigation">
+
+        <button
+            id="navHome"
+            class="nav-item active">
+
+            <span class="nav-icon">🏠</span>
+
+            <span class="nav-text">
+                Home
+            </span>
+
+        </button>
+
+        <button
+            id="navExplore"
+            class="nav-item">
+
+            <span class="nav-icon">🔍</span>
+
+            <span class="nav-text">
+                Explore
+            </span>
+
+        </button>
+
+        <button
+            id="navFavorite"
+            class="nav-item">
+
+            <span class="nav-icon">❤️</span>
+
+            <span class="nav-text">
+                Favorite
+            </span>
+
+        </button>
+
+        <button
+            id="navProfile"
+            class="nav-item">
+
+            <span class="nav-icon">👤</span>
+
+            <span class="nav-text">
+                Profile
+            </span>
+
+        </button>
+
+    </nav>
+
+</div>
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="script.js"></script>
+
+</body>
+
+</html>
+
+<!--==================================================-->
+<!-- END OF INDEX.HTML -->
+<!--==================================================-->
